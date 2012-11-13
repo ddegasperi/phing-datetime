@@ -6,13 +6,13 @@ DateTimeTask is a Phing extension which aims to provide the same functionality a
 Example
 -------
 
- $> <!-- remove tar-files older then DateInterval (7 days) -->
- $> <datetime>
- $>     <interval property="expire_date" pattern="Y-m-d" operation="sub" interval="P7D" locale="nl_NL"/>
- $> </datetime>
- $> 
- $> <delete verbose="true">
- $>     <fileset dir="foo" includes="**/*.tar">
- $>         <date datetime="${expire_date}" when="before"/>
- $>     </fileset>
- $> </delete>
+    <!-- remove tar-files older then DateInterval (7 days) -->
+    <datetime>
+        <interval property="expire_date" pattern="Y-m-d" operation="sub" interval="P7D" locale="nl_NL"/>
+    </datetime>
+    
+    <delete verbose="true">
+        <fileset dir="foo" includes="**/*.tar">
+            <date datetime="${expire_date}" when="before"/>
+        </fileset>
+    </delete>
